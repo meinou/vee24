@@ -1,1 +1,12 @@
-<p>albums works!</p>
+
+<ul *ngIf="fetched">
+  <li *ngFor="let album of albums" >
+    <div>
+      <span class="name">{{ album.name }}</span>
+      <span class="artist">{{ album.artist }} </span>
+
+    </div>
+    <span class="price">{{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}</span>
+  </li>
+</ul>
+

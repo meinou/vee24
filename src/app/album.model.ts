@@ -6,7 +6,7 @@ export interface Album {
   image: string;
   itemCount: number;
   price: number;
-  currence: string;
+  currency: string;
   rights: string;
   title: string;
   link: string;

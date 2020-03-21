@@ -1,0 +1,29 @@
+.artist {
+  font-weight: bold;
+}
+
+span {
+  margin: 6px;
+}
+
+li {
+  list-style-type: none;
+  margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #d2a19f;
+  border-radius: 5px;
+  height: 30px;
+  font-size: 1.3em;
+  padding: 2px;
+  display: flex;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
+  box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
+}
+
+li div {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+}

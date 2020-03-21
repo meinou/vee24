@@ -8,9 +8,11 @@ import {Album} from '../../album.model';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+  albums: Album[] = [];
+  fetched = false;
 
   constructor(private albumService: AlbumService) { }
-  private albums: Album[] = [];
+
 
   ngOnInit(): void {
     this.albumService.getAlbums()
@@ -18,11 +20,12 @@ export class AlbumsComponent implements OnInit {
         const {entry} = data.feed;
         this.albums = this.parseForAlbums(entry);
         console.log(this.albums);
+        this.fetched = true;
       });
   }
 
   parseForAlbums(entry): Album[] {
-    console.log(entry[0]);
+    // console.log(entry[0]);
     return entry.map((album) => {
       if (album) {
         return {
