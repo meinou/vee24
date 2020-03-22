@@ -10,6 +10,7 @@ import {Album} from '../../album.model';
 export class AlbumsComponent implements OnInit {
   albums: Album[] = [];
   fetched = false;
+  index: number;
 
   constructor(private albumService: AlbumService) { }
 
@@ -26,9 +27,10 @@ export class AlbumsComponent implements OnInit {
 
   parseForAlbums(entry): Album[] {
     // console.log(entry[0]);
-    return entry.map((album) => {
+    return entry.map((album, key) => {
       if (album) {
         return {
+          key,
           id: album.id.label,
           name: album['im:name'].label,
           artist: album['im:artist'].label,
@@ -44,6 +46,11 @@ export class AlbumsComponent implements OnInit {
         };
       }
     });
+  }
+
+  showDetail(key) {
+    console.log(this.albums[key]);
+    this.index = key;
   }
 
 }

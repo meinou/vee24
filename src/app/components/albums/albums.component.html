@@ -1,6 +1,6 @@
-
+<app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0"></app-album-detail>
 <ul *ngIf="fetched">
-  <li *ngFor="let album of albums" >
+  <li *ngFor="let album of albums" (click)="showDetail(album.key)">
     <div>
       <span class="name">{{ album.name }}</span>
       <span class="artist">{{ album.artist }} </span>
@@ -9,4 +9,5 @@
     <span class="price">{{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}</span>
   </li>
 </ul>
+
 

@@ -7,12 +7,14 @@ import { AlbumsComponent } from './components/albums/albums.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {AlbumService} from './services/album.service';
 import {HttpClientModule} from '@angular/common/http';
+import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AlbumsComponent,
-    FooterComponent
+    FooterComponent,
+    AlbumDetailComponent
   ],
   imports: [
     BrowserModule,

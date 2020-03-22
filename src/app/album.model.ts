@@ -1,5 +1,6 @@
 // tslint:disable-next-line:no-empty-interface
 export interface Album {
+  key: number;
   id: string;
   name: string;
   artist: string;
