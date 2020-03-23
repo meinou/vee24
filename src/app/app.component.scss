@@ -1,7 +1,9 @@
+@import "../variables";
+
 :host {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
-  color: #333;
+  color: $black;
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,7 +12,7 @@
 .toolbar {
   height: 160px;
   display: flex;
-  background-color: #d24118;
+  background-color: $red_bright;
   color: white;
   font-weight: 600;
 }
@@ -24,22 +26,15 @@
   width: 100%;
 }
 
-a,
-a:visited,
 a:hover {
-  color: #d23120;
-  text-decoration: none;
-}
-
-a:hover {
-  color: #95130f;
+  color: $red_dark;
 }
 
 footer {
   margin-top: 8px;
   height: 160px;
   display: flex;
-  background-color: #d24118;
+  background-color: $red_bright;
   float: bottom;
   align-items: center;
   line-height: 20px;

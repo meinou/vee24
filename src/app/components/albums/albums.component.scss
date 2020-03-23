@@ -1,3 +1,5 @@
+@import "src/variables";
+
 .artist {
   font-weight: bold;
 }
@@ -24,11 +26,11 @@ li {
   display: flex;
   justify-content: space-between;
 
-  border: 1px solid #d2a19f;
+  border: 1px solid $pink_detail_light;
   border-radius: 5px;
-  -webkit-box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
-  -moz-box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
-  box-shadow: 2px 2px 5px 0px rgba(191,80,86,1);
+  -webkit-box-shadow: 2px 2px 5px 0px $pink_detail;
+  -moz-box-shadow: 2px 2px 5px 0px $pink_detail;
+  box-shadow: 2px 2px 5px 0px $pink_detail;
 }
 
 li div {
@@ -38,5 +40,5 @@ li div {
 }
 
 li:hover {
-  background: rgba(255, 48, 31, 0.44);
+  background: $pink_main;
 }

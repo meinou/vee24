@@ -18,7 +18,9 @@ To be added
 
 * add type for fetched from server
 
-* add variables for css colors
+* <del>add variables for css colors</del>
+
+* add animation for detail open
 
 * fix close 
 
@@ -26,7 +28,7 @@ To be added
 
 * add info to the details
 
-* fix footer and header css
+* <del>fix footer and header css</del>
 
 * add info to footer and header
 
