@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AlbumService} from '../../services/album.service';
 import {Album} from '../../album.model';
 
@@ -8,6 +8,8 @@ import {Album} from '../../album.model';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+  @Input() search: string;
+  fromServer: Album[] = [];
   albums: Album[] = [];
   fetched = false;
   index: number;
@@ -20,6 +22,7 @@ export class AlbumsComponent implements OnInit {
       .subscribe((data) => {
         const {entry} = data.feed;
         this.albums = this.parseForAlbums(entry);
+        this.fromServer = [...this.albums];
         console.log(this.albums);
         this.fetched = true;
       });
@@ -53,4 +56,10 @@ export class AlbumsComponent implements OnInit {
     this.index = key;
   }
 
+  filter(event: any) {
+    this.search = event.target.value;
+    console.log(this.search);
+    this.albums = this.fromServer.filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
+    console.log(this.albums);
+  }
 }

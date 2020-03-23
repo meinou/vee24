@@ -1,7 +1,13 @@
 <div id="detail" (click)="close()">
   <div id="info">
+    <div id="inner_content">
+      <div>
+        <h1>{{ album.artist }}</h1>
+        <h2>{{ album.name }}</h2>
+      </div>
+      <img src="{{ album.image }}"/>
+    </div>
 
-    {{album.name}}
     <button id="close" (click)="close()">X</button>
   </div>
 
