@@ -14,3 +14,26 @@ To be added
 
 [leanyanko](http://www.twitter.com/leanyanko).
 
+## To do next 
+
+* add type for fetched from server
+
+* add variables for css colors
+
+* fix close 
+
+* make search look nice
+
+* add info to the details
+
+* fix footer and header css
+
+* add info to footer and header
+
+* make footer always be at the bottom
+
+* add screenshots to the readme
+
+* make detail scroll with screen
+
+* tests
