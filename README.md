@@ -38,4 +38,8 @@ To be added
 
 * make detail scroll with screen
 
+* add search by price range
+
+* fix when price is x.x0
+
 * tests
