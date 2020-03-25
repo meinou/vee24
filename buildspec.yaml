@@ -29,7 +29,7 @@ phases:
       # Install node dependancies.
       - yarn install
 #      - npm install -g @angular/cli
-#      - yarn add @angular-devkit/build-angular --dev
+      - yarn add @angular-devkit/build-angular --dev
 build:
   commands:
     # Builds Angular application. You can also build using custom environment here like mock or staging
