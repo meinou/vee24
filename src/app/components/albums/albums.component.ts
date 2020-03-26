@@ -58,19 +58,13 @@ export class AlbumsComponent implements OnInit {
     console.log(this.albums[key]);
     this.index = key;
   }
-  set(event: any) {
+
+  setSearch(event: any) {
     this.search = event.target.value;
     console.log(this.search);
   }
 
-//
   filter() {
-    // if (event.target.value) {
-    //   this.search = event.target.value;
-    // } else {
-    //   this.search = '';
-    // }
-    // console.log(this.search);
     if (!this.search || this.search === '') { this.albums = this.fromServer; } else {
       this.albums = this.fromServer.filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
     }

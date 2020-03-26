@@ -22,17 +22,11 @@ To be added
 
 * add type for fetched from server
 
-* <del>add variables for css colors</del>
-
 * add animation for detail open
 
 * fix close 
 
-* make search look nice
-
 * add info to the details
-
-* <del>fix footer and header css</del>
 
 * add info to footer and header
 
