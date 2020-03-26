@@ -13,8 +13,9 @@ phases:
       # Install Angular CLI
 #      - yarn global add @angular/cli@6.0.8
       # Install node dependancies.
+      - yarn global add @angular/cli
       - yarn install
-      - npm install -g @angular/cli
+#      - npm install -g @angular/cli
       - yarn add @angular-devkit/build-angular --dev
   build:
     commands:
@@ -26,7 +27,7 @@ phases:
       # Clear S3 bucket.
       - aws s3 rm s3://${S3_BUCKET} --recursive
       - echo S3 bucket is cleared. arn:aws:iam::315760622624:role/service-role/codebuild-vee-service-role
-  #    # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
+     # Copy dist folder to S3 bucket
       - aws s3 cp dist s3://${S3_BUCKET} --recursive
       - echo Build completed on `date`
 artifacts:
