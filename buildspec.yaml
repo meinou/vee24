@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: "vee-24"
-    APP_NAME: "vee24"
+    APP_NAME: "vee"
     BUILD_ENV : "prod"
 
 phases:
@@ -28,6 +28,7 @@ phases:
   build:
     commands:
       # Clear S3 bucket.
+      - echo s3://${S3_BUCKET}
       - aws s3 rm s3://${S3_BUCKET} --recursive
       - echo S3 bucket is cleared.
       # Builds Angular application. You can also build using custom environment here like mock or staging
