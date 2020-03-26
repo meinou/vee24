@@ -10,7 +10,7 @@ phases:
     runtime-versions:
       nodejs: 10
     commands:
-      # Install node dependancies.
+      # Install node dependancies. #
       - yarn global add @angular/cli
       - yarn install
       - yarn add @angular-devkit/build-angular --dev
