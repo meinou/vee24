@@ -10,11 +10,15 @@
   justify-content: center;
 }
 
+#name {
+  margin: 20px;
+}
+
 #info {
   margin-top: 30px;
   padding: 20px;
 
-  height: 60%;
+  height: 50%;
   width: 60%;
 
   opacity: 100%;
@@ -32,15 +36,46 @@
   border-radius: 10px;
 }
 
-img {
-  height: 30%;
+#cover {
+  width: 170px;
+}
+
+#category {
+  font-weight: bold;
+  font-size: 1.8em;
+  font-family: "Comic Sans MS";
+  color: $red_bright;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 150px;
+}
+
+
+#download {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2em;
+  margin: 60px;
+  text-decoration: none;
+  font-weight: bold;
+  justify-content: center;
+  color: $red_dark;
+}
+
+#column {
+  display: flex;
+  flex-direction: column;
 }
 
 #inner_content {
   width: 90%;
   background: rgba(255,157,143,0.44);
-  padding: 10px;
+  padding: 20px;
   -webkit-box-shadow: 0px 0px 8px 9px $pink_bright_detail;
   -moz-box-shadow: 0px 0px 8px 9px $pink_bright_detail;
   box-shadow: 0px 0px 8px 9px $pink_bright_detail;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }

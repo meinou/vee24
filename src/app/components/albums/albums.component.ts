@@ -17,22 +17,21 @@ export class AlbumsComponent implements OnInit {
   fetched = false;
   index: number;
 
-  @Input() element;
+  click(){
 
-
+  }
   ngOnInit(): void {
     this.albumService.getAlbums()
       .subscribe((data) => {
         const {entry} = data.feed;
         this.albums = this.parseForAlbums(entry);
         this.fromServer = [...this.albums];
-        console.log(this.albums);
         this.fetched = true;
       });
   }
 
   parseForAlbums(entry): Album[] {
-    // console.log(entry[0]);
+    console.log(entry);
     return entry.map((album, key) => {
       if (album) {
         return {
@@ -40,14 +39,14 @@ export class AlbumsComponent implements OnInit {
           id: album.id.label,
           name: album['im:name'].label,
           artist: album['im:artist'].label,
-          image: album['im:image'] && album['im:image'][0] ? album['im:image'][0].label : '',
+          image: album['im:image'] && album['im:image'][2] ? album['im:image'][2].label : '',
           itemCount: +album['im:itemCount'].label,
           price: +album['im:price'].attributes.amount,
           currency: album['im:price'].attributes.currency,
           rights: album.rights.label,
           title: album.title.label,
           link: album.link && album.link.attributes ? album.link.attributes.href : '',
-          category: album['im:category'] && album['im:category'].attributes ? album['im:category'].attributes.label : '',
+          category: album.category && album.category.attributes ? album.category.attributes.label : '',
           releaseDate: album['im:releaseDate'].label,
         };
       }
@@ -61,13 +60,12 @@ export class AlbumsComponent implements OnInit {
 
   setSearch(event: any) {
     this.search = event.target.value;
-    console.log(this.search);
   }
 
   filter() {
     if (!this.search || this.search === '') { this.albums = this.fromServer; } else {
-      this.albums = this.fromServer.filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
+      this.albums = this.fromServer
+                        .filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
     }
-    console.log(this.albums);
   }
 }

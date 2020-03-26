@@ -1,11 +1,25 @@
 <div id="detail" (click)="close()">
   <div id="info">
     <div id="inner_content">
-      <div>
+      <div id="name">
         <h1>{{ album.artist }}</h1>
         <h2>{{ album.name }}</h2>
+        <div>{{ album.rights }}</div>
+
+        <span>
+          <div id="category">#{{ album.category }}</div>
+        </span>
       </div>
-      <img src="{{ album.image }}"/>
+
+      <div id="column">
+        <img id="cover" src="{{ album.image }}"/>
+        <h3>Released on {{ album.releaseDate | date: 'longDate'}}</h3>
+        <span>{{ album.itemCount }} songs</span>
+        <a id="download" href="{{ album.link }}">
+          <img src="/assets/download.png" width="30px"> {{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}
+        </a>
+      </div>
+
     </div>
 
     <button id="close" (click)="close()">X</button>

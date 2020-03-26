@@ -1,4 +1,4 @@
-<app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0"></app-album-detail>
+<app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0" (click)="click()"></app-album-detail>
 
 <div id="search"><input  placeholder="" (keyup)="setSearch($event)" (change)="filter()"> <img src="/assets/search.png" id="glass" height="30px" (click)="filter()"></div>
 
@@ -12,5 +12,7 @@
     <span class="price">{{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}</span>
   </li>
 </ul>
+
+<div id="notfound" *ngIf="albums.length === 0"><h1>Nothing found</h1></div>
 
 
