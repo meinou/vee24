@@ -2,7 +2,7 @@ version: 0.2
 
 env:
   variables:
-    S3_BUCKET: "vee24"
+    S3_BUCKET: "vee-24"
 APP_NAME: "vee24"
 BUILD_ENV : "prod"
 
