@@ -3,14 +3,13 @@ version: 0.2
 env:
   variables:
     S3_BUCKET: "vee-24"
-APP_NAME: "vee24"
+    APP_NAME: "vee24"
 BUILD_ENV : "prod"
 
 phases:
   install:
-    install:
-      runtime-versions:
-        nodejs: 8
+    runtime-versions:
+      nodejs: 8
     commands:
       # Download and Install NodeJS 8.0
 #      - curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
