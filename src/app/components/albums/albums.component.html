@@ -1,6 +1,11 @@
 <app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0"></app-album-detail>
 
-<div id="search"><input  placeholder="" (change)="filter($event)"></div>
+<!--<div id="search"><input  placeholder="" (change)="filter($event)"> <img src="/assets/search.png" id="glass" height="30px" (click)="filter($event)"></div>-->
+<!--<div id="search"><div type="input" id="input" placeholder="" contenteditable="true" (change)="filter($event)"> <img src="/src/assets/search.png" height="30px" (click)="filter($event)"></div></div>-->
+<!--<div id="search"><input  placeholder="" [(ngModel)]="element.value" (change)="onChange($event)" /> <img src="/assets/search.png" id="glass" height="30px"/></div>-->
+
+<div id="search"><input  placeholder="" (keyup)="set($event)" (change)="filter()"> <img src="/assets/search.png" id="glass" height="30px" (click)="filter()"></div>
+
 <ul *ngIf="fetched">
   <li *ngFor="let album of albums" (click)="showDetail(album.key)">
     <div>

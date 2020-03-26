@@ -21,13 +21,6 @@
   margin-top: -70px;
 }
 
-.content {
-  float: top;
-  width: 100%;
-  min-height: 80%;
-  justify-content: center;
-}
-
 a:hover {
   color: $red_dark;
 }
@@ -35,12 +28,12 @@ a:hover {
 footer {
   margin-top: 8px;
   height: 160px;
-  display: flex;
   background-color: $red_bright;
+
+  display: flex;
   float: bottom;
   align-items: center;
   justify-content: space-around;
-  line-height: 20px;
 }
 
 

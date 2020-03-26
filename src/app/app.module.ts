@@ -8,6 +8,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import {AlbumService} from './services/album.service';
 import {HttpClientModule} from '@angular/common/http';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,12 @@ import { AlbumDetailComponent } from './components/album-detail/album-detail.com
     FooterComponent,
     AlbumDetailComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [AlbumService],
   bootstrap: [AppComponent]
 })

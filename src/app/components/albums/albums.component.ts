@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 import {AlbumService} from '../../services/album.service';
 import {Album} from '../../album.model';
 
@@ -8,13 +8,16 @@ import {Album} from '../../album.model';
   styleUrls: ['./albums.component.scss']
 })
 export class AlbumsComponent implements OnInit {
+
+  constructor(private albumService: AlbumService,
+              private cdRef: ChangeDetectorRef) { }
   @Input() search: string;
   fromServer: Album[] = [];
   albums: Album[] = [];
   fetched = false;
   index: number;
 
-  constructor(private albumService: AlbumService) { }
+  @Input() element;
 
 
   ngOnInit(): void {
@@ -55,11 +58,22 @@ export class AlbumsComponent implements OnInit {
     console.log(this.albums[key]);
     this.index = key;
   }
-//
-  filter(event: any) {
+  set(event: any) {
     this.search = event.target.value;
     console.log(this.search);
-    this.albums = this.fromServer.filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
+  }
+
+//
+  filter() {
+    // if (event.target.value) {
+    //   this.search = event.target.value;
+    // } else {
+    //   this.search = '';
+    // }
+    // console.log(this.search);
+    if (!this.search || this.search === '') { this.albums = this.fromServer; } else {
+      this.albums = this.fromServer.filter(album => (album.name.toLowerCase().includes(this.search) || album.artist.includes(this.search)));
+    }
     console.log(this.albums);
   }
 }

@@ -1,5 +1,11 @@
 @import "src/variables";
 
+:host {
+  float: top;
+  width: 100%;
+  min-height: 80%;
+}
+
 .artist {
   font-weight: bold;
 }
@@ -8,11 +14,16 @@ span {
   margin: 6px;
 }
 
+#glass {
+  margin-left: -35px;
+}
+
 #search {
+  margin: 20px;
   display:flex;
   align-items: center;
-  background: aqua;
-  width: 100%;
+  justify-content: center;
+  width: 70%;
 }
 
 ul {
@@ -22,10 +33,11 @@ ul {
 }
 
 li, input {
+  min-width: 300px;
   width: 80%;
   list-style-type: none;
   margin: 2px;
-  height: 30px;
+  min-height: 30px;
   padding: 2px;
   font-size: 1.3em;
 
