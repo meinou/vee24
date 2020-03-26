@@ -6,6 +6,10 @@ This project was created as an assignment for Vee24
 
 Run `npm start` in terminal. Navigate to `http://localhost:4200/` where the app will be running at.
 
+## Building and deploying automatically from github
+
+http://vee-24.s3-website-us-west-2.amazonaws.com/
+
 ## Screensorts
 
 To be added

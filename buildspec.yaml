@@ -5,7 +5,6 @@ env:
     S3_BUCKET: "vee-24"
     APP_NAME: "vee"
     BUILD_ENV : "prod"
-
 phases:
   install:
     runtime-versions:
@@ -28,25 +27,20 @@ phases:
   build:
     commands:
       # Clear S3 bucket.
-      - echo s3://${S3_BUCKET}
-      - aws s3 rm s3://${S3_BUCKET} --recursive
-      - echo S3 bucket is cleared.
+#      - echo s3://${S3_BUCKET}
+#      - aws s3 rm s3://${S3_BUCKET} --recursive
+#      - echo S3 bucket is cleared.
       # Builds Angular application. You can also build using custom environment here like mock or staging
       - echo Build started on `date`
       - ng build --${BUILD_ENV}
   post_build:
     commands:
       # Clear S3 bucket.
-  #    - aws s3 rm s3://${S3_BUCKET} --recursive
-  #    - echo S3 bucket is cleared. arn:aws:iam::315760622624:role/service-role/codebuild-vee-service-role
+      - aws s3 rm s3://${S3_BUCKET} --recursive
+      - echo S3 bucket is cleared. arn:aws:iam::315760622624:role/service-role/codebuild-vee-service-role
   #    # Copy dist folder to S3 bucket, As of Angular 6, builds are stored inside an app folder in distribution and not at the root of the dist folder
       - aws s3 cp dist s3://${S3_BUCKET} --recursive
       - echo Build completed on `date`
 artifacts:
-#  files:
-#    - '/'
-#  discard-paths: yes
-#  base-directory: 'dist/**/*'
-#artifacts:
   files:
     - dist/**/*
