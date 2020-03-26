@@ -18,7 +18,8 @@ phases:
     commands:
       # Builds Angular application
       - echo Build started on `date`
-      - ng build --${BUILD_ENV}
+#      - ng build --${BUILD_ENV}
+        - ng build
   post_build:
     commands:
       # Clear S3 bucket.
@@ -29,5 +30,8 @@ phases:
       - aws s3 cp * s3://${S3_BUCKET} --recursive
       - echo Build completed on `date`
 artifacts:
+  files:
+    - dist/**/*
+secondary-artifacts:
   files:
     - dist/**/*
