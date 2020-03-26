@@ -55,7 +55,7 @@ export class AlbumsComponent implements OnInit {
     console.log(this.albums[key]);
     this.index = key;
   }
-
+//
   filter(event: any) {
     this.search = event.target.value;
     console.log(this.search);
