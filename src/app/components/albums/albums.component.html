@@ -1,6 +1,6 @@
-<app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0" (click)="click()"></app-album-detail>
+<app-album-detail [album]="albums[index]" [index]="index" (indexChange)="this.index = $event" *ngIf="index || index == 0" (click)="click($event)"></app-album-detail>
 
-<div id="search"><input  placeholder="" (keyup)="setSearch($event)" (change)="filter()"> <img src="/assets/search.png" id="glass" height="30px" (click)="filter()"></div>
+<div class="search"><input  #input placeholder="" (change)="filter(input.value)"> <img src="/assets/search.png" class="glass" height="30px" (click)="filter(input.value)"></div>
 
 <ul *ngIf="fetched">
   <li *ngFor="let album of albums" (click)="showDetail(album.key)">
@@ -13,6 +13,6 @@
   </li>
 </ul>
 
-<div id="notfound" *ngIf="albums.length === 0"><h1>Nothing found</h1></div>
+<div class="notfound" *ngIf="albums.length === 0"><h1>Nothing found</h1></div>
 
 
