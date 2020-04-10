@@ -9,6 +9,8 @@ import {AlbumService} from './services/album.service';
 import {HttpClientModule} from '@angular/common/http';
 import { AlbumDetailComponent } from './components/album-detail/album-detail.component';
 import {FormsModule} from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import {FormsModule} from '@angular/forms';
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
-        FormsModule
+        FormsModule,
+        BrowserAnimationsModule,
+        MatCardModule
     ],
   providers: [AlbumService],
   bootstrap: [AppComponent]

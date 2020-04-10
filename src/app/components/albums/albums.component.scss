@@ -6,6 +6,28 @@
   min-height: 80%;
 }
 
+@media only screen and (max-width: 500px) {
+  :host {
+    font-size: 0.7em;
+    padding: 0px;
+    margin: 0px;
+  }
+  .search {
+    margin: 0px;
+    width: 100%;
+  }
+
+  ul {
+    margin: 0px;
+    display: inline;
+  }
+
+  li, input {
+    width: 100%;
+    margin: 0px;
+  }
+}
+
 .artist {
   font-weight: bold;
 }

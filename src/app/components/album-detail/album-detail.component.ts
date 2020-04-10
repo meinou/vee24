@@ -1,7 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Album} from '../../album.model';
-import {AlbumService} from '../../services/album.service';
-import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-album-detail',

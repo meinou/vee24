@@ -9,7 +9,7 @@
       <span class="artist">{{ album.artist }} </span>
 
     </div>
-    <span class="price">{{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}</span>
+    <span class="price">{{ album.price | currency: album.currency}}</span>
   </li>
 </ul>
 

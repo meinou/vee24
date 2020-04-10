@@ -1,28 +1,33 @@
-<div class="detail" (click)="close()">
+<mat-card class="detail" >
   <div class="info">
-    <div class="inner_content">
-      <div class="name">
-        <h1>{{ album.artist }}</h1>
-        <h2>{{ album.name }}</h2>
-        <div>{{ album.rights }}</div>
+    <mat-card class="inner_content">
+      <mat-card-header >
+        <h1>{{ album.artist }}</h1><br>
+      </mat-card-header>
 
-        <span>
+      <mat-card-content class="card">
+        <div>
+          <h2>{{ album.name }}</h2>
+          <div>{{ album.rights }}</div>
+          <h3>Released on {{ album.releaseDate | date: 'longDate'}}</h3>
+          <span>{{ album.itemCount }} songs</span>
+          <a class="download" href="{{ album.link }}">
+            <img  src="/assets/download.png" width="30px">{{ album.price | currency: album.currency }}
+          </a>
+        </div>
+        
+        <div className="column">
+          <img mat-card-image class="cover" src="{{ album.image }}"/>
+
+        </div>
+      </mat-card-content>
+        
+
+      <mat-card-footer>
           <div class="category">#{{ album.category }}</div>
-        </span>
-      </div>
-
-      <div class="column">
-        <img class="cover" src="{{ album.image }}"/>
-        <h3>Released on {{ album.releaseDate | date: 'longDate'}}</h3>
-        <span>{{ album.itemCount }} songs</span>
-        <a class="download" href="{{ album.link }}">
-          <img src="/assets/download.png" width="30px"> {{ album.currency == 'USD' ? '$' : album.currency }}{{ album.price }}
-        </a>
-      </div>
-
-    </div>
+      </mat-card-footer>
+    </mat-card>
 
     <button class="close" (click)="close()">X</button>
   </div>
-
-</div>
+</mat-card>

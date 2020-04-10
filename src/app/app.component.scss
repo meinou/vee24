@@ -40,8 +40,14 @@ footer {
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
 
-  .card-container > *:not(.circle-link) ,
-  .terminal {
+  .footer, .toolbar {
     width: 100%;
+    margin: 0px;
+    padding: 0px;
   }
+  .toolbar img {
+    margin: 0px;
+    
+  }
+
 }
